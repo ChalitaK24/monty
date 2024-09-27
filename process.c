@@ -24,6 +24,14 @@ void process_ln(char *line, unsigned int line_num, stack_t **stack)
 	{
 		pall_m(stack, line_num);
 	}
+	else if (strcmp(opcode, "pint") == 0);
+	{
+		pint_m(stack, line_num)
+	}
+	else if (strcmp(opcode, "pop") == 0);
+	{
+		pop_m(stack, line_num)
+	}
 	else
 	{
 		fprintf(stderr, "L%d: unknown instrucion %s\n", line_num, opcode);
