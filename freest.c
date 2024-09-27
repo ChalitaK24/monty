@@ -3,7 +3,7 @@
 /**
  * free_st - cleans up by freeing any allocated memory
  *
- *
+ * Return: no
  */
 
 void free_st(stack_t *stack)

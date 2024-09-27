@@ -38,7 +38,7 @@ typedef struct stack_s
 typedef struct instruction_s
 {
 	char *opcode;
-	void (*f)(stack_t **stack, unsigned int line_number);
+	void (*f)(stack_t **stack, unsigned int line_num);
 } instruction_t;
 
 
@@ -50,6 +50,7 @@ void pall_m(stack_t **stack, unsigned int line_num);
 void pop_m(stack_t **stack, unsigned int line_num);
 void swap_m(stack_t **stack, unsigned int line_num);
 void read_mfile(char *filenm, stack_t **stack);
+void free_st(stack_t *stack);
 
 
 
