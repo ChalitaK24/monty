@@ -7,6 +7,7 @@ void execute_inst(char *opcode, char *arg, stack_t **stack, unsigned int line_nu
 		{"pall", pall_m},
 		{"pint", pint_m},
 		{"pop", pop_m},
+		{"swap", swap_m},
 		{NULL, NULL}
 	};
 

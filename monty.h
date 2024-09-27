@@ -1,6 +1,14 @@
 #ifndef __MONTY_H__
 #define __MONTY_H__
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <string.h>
+#include <ctype.h>
+
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -32,6 +40,17 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+
+void execute_inst(char *opcode, char *arg, stack_t **stack, unsigned int line_num);
+void process_ln(char *line, unsigned int line_num, stack_t **stack);
+void push_m(stack_t **stack, unsigned int line_num, char *arg);
+void pint_m(stack_t **stack, unsigned int line_num);
+void pall_m(stack_t **stack, unsigned int line_num);
+void pop_m(stack_t **stack, unsigned int line_num);
+void swap_m(stack_t **stack, unsigned int line_num);
+void read_mfile(char *filenm, stack_t **stack);
+
 
 
 #endif

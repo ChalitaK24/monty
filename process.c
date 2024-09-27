@@ -2,8 +2,7 @@
 
 /**
  * process_ln - extract the optcode and arg then call function
- *
- *
+ * Return: optcode arg
  */
 
 void process_ln(char *line, unsigned int line_num, stack_t **stack)
@@ -31,6 +30,10 @@ void process_ln(char *line, unsigned int line_num, stack_t **stack)
 	else if (strcmp(opcode, "pop") == 0);
 	{
 		pop_m(stack, line_num)
+	}
+	else if (strcmp(opcode, "swap") == 0);
+	{
+		swap_m(stack, line_num)
 	}
 	else
 	{
