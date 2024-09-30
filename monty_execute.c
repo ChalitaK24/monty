@@ -8,6 +8,9 @@ void execute_inst(char *opcode, stack_t **stack, unsigned int line_num)
 				{"pint", pint_m},
 				{"pop", pop_m},
 				{"swap", swap_m},
+				{"nop", nop_m},
+				{"sub", sub_m},
+				{"add", add_m},
 				{NULL, NULL}
 				};
 

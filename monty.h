@@ -9,7 +9,7 @@
 #include <string.h>
 #include <ctype.h>
 
-
+#define MONTY_ERROR_NONE 0
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -49,12 +49,13 @@ void pint_m(stack_t **stack, unsigned int line_num);
 void pall_m(stack_t **stack, unsigned int line_num);
 void pop_m(stack_t **stack, unsigned int line_num);
 void swap_m(stack_t **stack, unsigned int line_num);
-void read_mfile(char *filenm, stack_t **stack);
+int read_mfile(FILE *file, stack_t **stack);
 void free_st(stack_t *stack);
 void nop_m(stack_t **stack, unsigned int line_num);
 void sub_m(stack_t **stack, unsigned int line_num);
 void add_m(stack_t **stack, unsigned int line_num);
 
 ssize_t custom_getline(char **lineptr, size_t *n, FILE *stream);
+int main(int ac, char** av);
 
 #endif

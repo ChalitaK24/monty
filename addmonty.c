@@ -1,7 +1,10 @@
 #include "monty.h"
 
 /**
- * add_m -adds the top two elements of the stack and stores the result in the second top elemen
+ * add_m -adds the top two elements of the
+ * stack and stores the result in the second top elemen
+ * @stack: stack of the linked list
+ * @line_num: line number
  * Return: none
  */
 

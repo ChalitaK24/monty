@@ -6,21 +6,18 @@
  * Return: nonw
  */
 
-void read_mfile(char *filenm, stack_t **stack)
+int read_mfile(FILE *file, stack_t **stack)
 {
 	char *ln = NULL;
 	size_t len = 0;
 	unsigned int line_num = 0;
 
-	FILE *file = file;
 	
-	file = fopen(filenm, "r");
-
 	if (file == NULL)
 	{
-		fprintf(stderr, "Error: Cant't open file %s\n", filenm);
-		exit(EXIT_FAILURE);
-	}
+		fprintf(stderr, "Error: Cant't open file\n");
+		exit(MONTY_ERROR_NONE);
+	}	
 
 	while (custom_getline(&ln, &len, file) != -1)
 	{
@@ -29,5 +26,5 @@ void read_mfile(char *filenm, stack_t **stack)
 	}
 
 	free(ln);
-	fclose(file);
+	return (MONTY_ERROR_NONE);
 }
