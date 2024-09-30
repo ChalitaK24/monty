@@ -7,16 +7,17 @@
  * Return: new code
  */
 
-void push_m(stack_t **stack, unsigned int line_num, char *arg)
+void push_m(stack_t **stack, unsigned int line_num)
 {
-	if (arg == NULL || !is_integer(arg))
+	char *arg = NULL;
+	int value = atoi(arg);
+        stack_t *new_node = malloc(sizeof(stack_t));
+
+	if (arg == NULL || !isdigit(arg))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_num);
 		exit(EXIT_FAILURE);
 	}
-
-	int value = atoi(arg);
-	stack_t *new_node = malloc(sizeof(stack_t));
 
 	if (new_node == NULL)
 	{

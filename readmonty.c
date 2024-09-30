@@ -1,5 +1,5 @@
 #include "monty.h"
-
+#include <stdio.h>
 /**
  * read_mfile -  Open the bytecode file and read it line by line.
  *
@@ -8,7 +8,13 @@
 
 void read_mfile(char *filenm, stack_t **stack)
 {
-	FILE *file =fopen(filenm, "r");
+	char *ln = NULL;
+	size_t len = 0;
+	unsigned int line_num = 0;
+
+	FILE *file = file;
+	
+	file = fopen(filenm, "r");
 
 	if (file == NULL)
 	{
@@ -16,11 +22,7 @@ void read_mfile(char *filenm, stack_t **stack)
 		exit(EXIT_FAILURE);
 	}
 
-	char *ln = NULL;
-	size_t len = 0;
-	unsigned int line_num = 0;
-
-	while (getline(&ln, &len, file) != -1)
+	while (custom_getline(&ln, &len, file) != -1)
 	{
 		line_num++;
 		process_ln(ln, line_num, stack);

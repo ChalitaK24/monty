@@ -1,6 +1,6 @@
 #include "monty.h"
 
-void execute_inst(char *opcode, char *arg, stack_t **stack, unsigned int line_num)
+void execute_inst(char *opcode, stack_t **stack, unsigned int line_num)
 {
 	instruction_t inst[] = {
 				{"push", push_m},
@@ -12,11 +12,13 @@ void execute_inst(char *opcode, char *arg, stack_t **stack, unsigned int line_nu
 				};
 
 
-	for (int i = 0; inst[i].opcode !+ NULL; i+)
+	int i;
+
+	for (i = 0; inst[i].opcode != NULL; i++)
 	{
-		if (strcmp(inst[i].opcode, opcode) == 0
+		if (strcmp(inst[i].opcode, opcode) == 0)
 		{
-			inst[i].f(stack, line_num), arg);
+			inst[i].f(stack, line_num);
 			return;
 		}
 	}

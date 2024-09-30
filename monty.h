@@ -42,16 +42,19 @@ typedef struct instruction_s
 } instruction_t;
 
 
-void execute_inst(char *opcode, char *arg, stack_t **stack, unsigned int line_num);
+void execute_inst(char *opcode, stack_t **stack, unsigned int line_num);
 void process_ln(char *line, unsigned int line_num, stack_t **stack);
-void push_m(stack_t **stack, unsigned int line_num, char *arg);
+void push_m(stack_t **stack, unsigned int line_num);
 void pint_m(stack_t **stack, unsigned int line_num);
 void pall_m(stack_t **stack, unsigned int line_num);
 void pop_m(stack_t **stack, unsigned int line_num);
 void swap_m(stack_t **stack, unsigned int line_num);
 void read_mfile(char *filenm, stack_t **stack);
 void free_st(stack_t *stack);
+void nop_m(stack_t **stack, unsigned int line_num);
+void sub_m(stack_t **stack, unsigned int line_num);
+void add_m(stack_t **stack, unsigned int line_num);
 
-
+ssize_t custom_getline(char **lineptr, size_t *n, FILE *stream);
 
 #endif
